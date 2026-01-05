@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 
 const Hero = () => {
     const { scrollY } = useScroll();
@@ -7,7 +6,7 @@ const Hero = () => {
     const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
     // Staggered text animation variants
-    const letterContainer = {
+    const letterContainer: Variants = {
         hidden: { opacity: 0 },
         show: {
             opacity: 1,
@@ -18,7 +17,7 @@ const Hero = () => {
         }
     };
 
-    const letterAnimation = {
+    const letterAnimation: Variants = {
         hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
         show: {
             opacity: 1,
