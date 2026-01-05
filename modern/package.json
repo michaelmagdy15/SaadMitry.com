@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://michaelmagdy15.github.io/SaadMitry.com/",
+  "homepage": "https://saadmitry.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
