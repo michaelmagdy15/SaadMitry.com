@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { getAssetUrl } from '../utils/assetUtils';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface TimelineEvent {
@@ -16,7 +17,7 @@ const timelineData: TimelineEvent[] = [
         year: '1930s',
         title: 'Early Beginnings',
         description: 'Born into a world of tradition, Saad Mitry showed an early aptitude for the arts, sketching the world around him with remarkable detail.',
-        image: '/assets/images/bio_15.jpg', // Using existing BIO image as placeholder
+        image: getAssetUrl('/assets/images/bio_15.jpg'), // Using existing BIO image as placeholder
         category: 'Life'
     },
     {
@@ -24,7 +25,7 @@ const timelineData: TimelineEvent[] = [
         year: '1950s',
         title: 'Mastering the Form',
         description: 'Dedicating himself to sculpture, he began to master the human form, blending classical techniques with his unique emotive style.',
-        image: '/assets/images/port2_32.jpg',
+        image: getAssetUrl('/assets/images/port2_32.jpg'),
         category: 'Art'
     },
     {
@@ -32,7 +33,7 @@ const timelineData: TimelineEvent[] = [
         year: '1960s',
         title: 'The Golden Era',
         description: 'A period of prolific creation. His sculptures of presidential figures and historical icons gained him nationwide recognition.',
-        image: '/assets/images/port4_32.jpg',
+        image: getAssetUrl('/assets/images/port4_32.jpg'),
         category: 'Art'
     },
     {
@@ -40,7 +41,7 @@ const timelineData: TimelineEvent[] = [
         year: '1979-1983',
         title: 'Divine Melodies',
         description: 'Expanding his artistic expression, he recorded a series of spiritual hymns, leaving a legacy of music that touches the soul.',
-        image: '/assets/images/port3_32.jpg', // Placeholder
+        image: getAssetUrl('/assets/images/port3_32.jpg'), // Placeholder
         category: 'Music'
     },
     {
@@ -48,7 +49,7 @@ const timelineData: TimelineEvent[] = [
         year: 'Legacy',
         title: 'Eternal Inspiration',
         description: 'His work continues to inspire new generations of artists. A true visionary whose spirit lives on through his creations.',
-        image: '/assets/images/saad_logo.png',
+        image: getAssetUrl('/assets/images/saad_logo.png'),
         category: 'Life'
     }
 ];
@@ -118,7 +119,7 @@ const Timeline = () => {
                     {/* End Card */}
                     <div className="flex-shrink-0 w-[30vw] flex items-center justify-center">
                         <div className="text-center">
-                            <img src="/assets/images/saad_logo.png" alt="Logo" className="w-32 h-32 mx-auto mb-6 opacity-50" />
+                            <img src={getAssetUrl('/assets/images/saad_logo.png')} alt="Logo" className="w-32 h-32 mx-auto mb-6 opacity-50" />
                             <p className="text-memorial-gold text-sm tracking-[0.3em] uppercase">The Legend Lives On</p>
                         </div>
                     </div>

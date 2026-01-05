@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { getAssetUrl } from '../utils/assetUtils';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import ScrollReveal from '../components/ScrollReveal';
@@ -26,7 +27,7 @@ const Music: React.FC = () => {
 
     useEffect(() => {
         if (currentTrackId && audioRef.current) {
-            audioRef.current.src = `/assets/audio/${currentTrackId}.mp3`;
+            audioRef.current.src = getAssetUrl(`/assets/audio/${currentTrackId}.mp3`);
             if (isPlaying) {
                 audioRef.current.play().catch(e => console.log('Playback error:', e));
             }
@@ -105,7 +106,7 @@ const Music: React.FC = () => {
                         <div className="absolute w-[35%] h-[35%] bg-memorial-gold/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-memorial-gold/30">
                             <div className="w-[90%] h-[90%] rounded-full overflow-hidden relative">
                                 <img
-                                    src="/assets/images/saad_logo.png"
+                                    src={getAssetUrl('/assets/images/saad_logo.png')}
                                     alt="Album Art"
                                     className="w-full h-full object-cover opacity-80"
                                 />

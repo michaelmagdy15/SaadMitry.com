@@ -2,6 +2,8 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import ScrollReveal from '../components/ScrollReveal';
+import { Link } from 'react-router-dom';
+import { getAssetUrl } from '../utils/assetUtils';
 
 const Home: React.FC = () => {
     return (
@@ -30,15 +32,18 @@ const Home: React.FC = () => {
             {/* Memorial/Tribute Section */}
             <ScrollReveal animation="slide-in-right" width="100%">
                 <section className="py-24 bg-memorial-brown/10 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('/assets/images/index_01.gif')] opacity-5 mix-blend-overlay"></div>
+                    <div
+                        className="absolute inset-0 opacity-5 mix-blend-overlay bg-cover bg-center"
+                        style={{ backgroundImage: `url(${getAssetUrl('/assets/images/index_01.gif')})` }}
+                    ></div>
                     <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                         <h2 className="text-4xl font-display text-memorial-gold mb-6">A Life in Stone & Color</h2>
                         <p className="text-lg text-memorial-sand/80 mb-8 font-serif">
                             Explore the complete journey of a man who dedicated his life to eternalizing moments in bronze and oil.
                         </p>
-                        <a href="/bio" className="inline-block px-8 py-3 bg-memorial-gold text-memorial-dark font-bold tracking-wider hover:bg-memorial-gold-light transition-colors hover:scale-105 duration-300">
+                        <Link to="/bio" className="inline-block px-8 py-3 bg-memorial-gold text-memorial-dark font-bold tracking-wider hover:bg-memorial-gold-light transition-colors hover:scale-105 duration-300">
                             Read Biography
-                        </a>
+                        </Link>
                     </div>
                 </section>
             </ScrollReveal>

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { getAssetUrl } from '../utils/assetUtils';
 import ScrollReveal from '../components/ScrollReveal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,17 +10,17 @@ const Portfolio: React.FC = () => {
     const [selectedImageId, setSelectedImageId] = useState<string | null>(null);
 
     const items = [
-        { id: 'port1', category: 'sculpture', label: 'Presidential Portrait', img: '/assets/images/port1_32.jpg' },
-        { id: 'port2', category: 'sculpture', label: 'The Thinker', img: '/assets/images/port2_32.jpg' },
-        { id: 'port3', category: 'sculpture', label: 'Divine Figure', img: '/assets/images/port3_32.jpg' },
-        { id: 'port4', category: 'sculpture', label: 'Legacy Bust', img: '/assets/images/port4_32.jpg' },
-        { id: 'port5', category: 'sculpture', label: 'Historical Icon', img: '/assets/images/port5_32.jpg' },
-        { id: 'port6', category: 'sculpture', label: 'Eternal Gaze', img: '/assets/images/port6_32.jpg' },
-        { id: 'port7', category: 'sculpture', label: 'Noble Spirit', img: '/assets/images/port7_32.jpg' },
-        { id: 'port8', category: 'sculpture', label: 'Silent Strength', img: '/assets/images/port8_32.jpg' },
-        { id: 'porta1', category: 'painting', label: 'Sacred Sketch', img: '/assets/images/porta1_32.jpg' },
-        { id: 'porta2', category: 'painting', label: 'Drafting Forms', img: '/assets/images/porta2_32.jpg' },
-        { id: 'porta3', category: 'painting', label: 'Study of Light', img: '/assets/images/porta3_32.jpg' },
+        { id: 'port1', category: 'sculpture', label: 'Presidential Portrait', img: getAssetUrl('/assets/images/port1_32.jpg') },
+        { id: 'port2', category: 'sculpture', label: 'The Thinker', img: getAssetUrl('/assets/images/port2_32.jpg') },
+        { id: 'port3', category: 'sculpture', label: 'Divine Figure', img: getAssetUrl('/assets/images/port3_32.jpg') },
+        { id: 'port4', category: 'sculpture', label: 'Legacy Bust', img: getAssetUrl('/assets/images/port4_32.jpg') },
+        { id: 'port5', category: 'sculpture', label: 'Historical Icon', img: getAssetUrl('/assets/images/port5_32.jpg') },
+        { id: 'port6', category: 'sculpture', label: 'Eternal Gaze', img: getAssetUrl('/assets/images/port6_32.jpg') },
+        { id: 'port7', category: 'sculpture', label: 'Noble Spirit', img: getAssetUrl('/assets/images/port7_32.jpg') },
+        { id: 'port8', category: 'sculpture', label: 'Silent Strength', img: getAssetUrl('/assets/images/port8_32.jpg') },
+        { id: 'porta1', category: 'painting', label: 'Sacred Sketch', img: getAssetUrl('/assets/images/porta1_32.jpg') },
+        { id: 'porta2', category: 'painting', label: 'Drafting Forms', img: getAssetUrl('/assets/images/porta2_32.jpg') },
+        { id: 'porta3', category: 'painting', label: 'Study of Light', img: getAssetUrl('/assets/images/porta3_32.jpg') },
     ];
 
     const filteredItems = useMemo(() => {
