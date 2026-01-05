@@ -2,31 +2,41 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Gallery from '../components/Gallery';
 import ScrollReveal from '../components/ScrollReveal';
+import QuoteCarousel from '../components/QuoteCarousel';
+import PhotoMemories from '../components/PhotoMemories';
+import CandleLighting from '../components/CandleLighting';
+import Guestbook from '../components/Guestbook';
 import { Link } from 'react-router-dom';
 import { getAssetUrl } from '../utils/assetUtils';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Home: React.FC = () => {
+    const { t } = useLanguage();
+
     return (
         <main className="bg-memorial-dark min-h-screen">
             <Hero />
 
-            {/* Introduction / Bio Teaser */}
+            {/* Quote Carousel Section */}
             <ScrollReveal animation="fade-up" className="mx-auto">
-                <section className="py-20 px-6 max-w-4xl mx-auto text-center">
-                    <p className="text-2xl md:text-3xl font-display leading-relaxed text-memorial-sand/90">
-                        "Art is not just what you see, but what you make others see.
-                        From the sanctity of churches to the halls of presidents,
-                        my hands have shaped the silent stories of our time."
-                    </p>
-                    <div className="mt-8">
-                        <span className="block w-16 h-1 bg-memorial-gold mx-auto mb-4"></span>
-                        <p className="font-serif text-memorial-gold uppercase tracking-widest text-sm">Saad Mitry</p>
-                    </div>
-                </section>
+                <QuoteCarousel />
             </ScrollReveal>
 
+            {/* Photo Memories with Ken Burns Effect */}
+            <ScrollReveal animation="fade-in" width="100%">
+                <PhotoMemories />
+            </ScrollReveal>
+
+            {/* Original Gallery Preview */}
             <ScrollReveal animation="fade-in" width="100%">
                 <Gallery />
+            </ScrollReveal>
+
+            {/* Candle Lighting Ceremony */}
+            <ScrollReveal animation="scale-up" width="100%">
+                <div className="bg-gradient-to-b from-transparent via-memorial-brown/5 to-transparent">
+                    <CandleLighting />
+                </div>
             </ScrollReveal>
 
             {/* Memorial/Tribute Section */}
@@ -37,15 +47,25 @@ const Home: React.FC = () => {
                         style={{ backgroundImage: `url(${getAssetUrl('/assets/images/index_01.gif')})` }}
                     ></div>
                     <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-                        <h2 className="text-4xl font-display text-memorial-gold mb-6">A Life in Stone & Color</h2>
+                        <h2 className="text-4xl font-display text-memorial-gold mb-6">
+                            {t('A Life in Stone & Color', 'حياة في الحجر واللون')}
+                        </h2>
                         <p className="text-lg text-memorial-sand/80 mb-8 font-serif">
-                            Explore the complete journey of a man who dedicated his life to eternalizing moments in bronze and oil.
+                            {t(
+                                'Explore the complete journey of a man who dedicated his life to eternalizing moments in bronze and oil.',
+                                'اكتشف الرحلة الكاملة لرجل كرّس حياته لتخليد اللحظات في البرونز والزيت.'
+                            )}
                         </p>
                         <Link to="/bio" className="inline-block px-8 py-3 bg-memorial-gold text-memorial-dark font-bold tracking-wider hover:bg-memorial-gold-light transition-colors hover:scale-105 duration-300">
-                            Read Biography
+                            {t('Read Biography', 'اقرأ السيرة الذاتية')}
                         </Link>
                     </div>
                 </section>
+            </ScrollReveal>
+
+            {/* Guestbook / Remembrance Messages */}
+            <ScrollReveal animation="fade-up" width="100%">
+                <Guestbook />
             </ScrollReveal>
         </main>
     );

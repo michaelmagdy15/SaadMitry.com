@@ -4,6 +4,8 @@ import Footer from './Footer';
 import AudioPlayer from './AudioPlayer';
 import IntroLoader from './IntroLoader';
 import DustBackground from './DustBackground';
+import FilmGrainOverlay from './FilmGrainOverlay';
+import CursorTrail from './CursorTrail';
 
 interface LayoutProps {
     children: ReactNode;
@@ -14,6 +16,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="min-h-screen flex flex-col bg-memorial-dark text-memorial-sand font-sans selection:bg-memorial-gold/30 bg-gradient-radial from-[#1a1105] to-memorial-dark bg-fixed relative">
             <IntroLoader />
             <DustBackground />
+            <FilmGrainOverlay />
+            <CursorTrail />
             <Navbar />
             <main className="flex-grow relative z-10">
                 {children}
