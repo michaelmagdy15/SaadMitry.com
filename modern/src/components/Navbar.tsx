@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
+import { getAssetUrl } from '../utils/assetUtils';
+
 const Navbar: React.FC = () => {
     const { language, toggleLanguage, t } = useLanguage();
     const location = useLocation();
@@ -24,7 +26,7 @@ const Navbar: React.FC = () => {
                     {/* Logo / Brand */}
                     <div className="flex-shrink-0 flex items-center gap-3">
                         <img
-                            src="/assets/images/saad_logo.png"
+                            src={getAssetUrl('/assets/images/saad_logo.png')}
                             alt="Saad Mitry"
                             className="h-12 w-12 md:h-16 md:w-16 rounded-full object-cover border-2 border-memorial-gold/50 shadow-lg"
                         />

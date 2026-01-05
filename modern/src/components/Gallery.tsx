@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { getAssetUrl } from '../utils/assetUtils';
 
 const artwork = [
-    { id: 1, title: 'Sacred Art', category: 'Paintings', src: '/assets/images/port1_32.jpg' },
-    { id: 2, title: 'Presidential Sculpture', category: 'Sculptures', src: '/assets/images/port2_32.jpg' },
-    { id: 3, title: 'Divine Mural', category: 'Paintings', src: '/assets/images/port3_32.jpg' },
-    { id: 4, title: 'Historical Figure', category: 'Sculptures', src: '/assets/images/port4_32.jpg' },
-    { id: 5, title: 'The Last Supper', category: 'Paintings', src: '/assets/images/port5_32.jpg' },
-    { id: 6, title: 'Angel Statue', category: 'Sculptures', src: '/assets/images/port6_32.jpg' },
-    { id: 7, title: 'Eternal Moment', category: 'Paintings', src: '/assets/images/port7_32.jpg' },
-    { id: 8, title: 'Bronze Legacy', category: 'Sculptures', src: '/assets/images/port8_32.jpg' },
-    { id: 9, title: 'Church Interior', category: 'Paintings', src: '/assets/images/porta1_32.jpg' },
+    { id: 1, title: 'Sacred Art', category: 'Paintings', src: getAssetUrl('/assets/images/port1_32.jpg') },
+    { id: 2, title: 'Presidential Sculpture', category: 'Sculptures', src: getAssetUrl('/assets/images/port2_32.jpg') },
+    { id: 3, title: 'Divine Mural', category: 'Paintings', src: getAssetUrl('/assets/images/port3_32.jpg') },
+    { id: 4, title: 'Historical Figure', category: 'Sculptures', src: getAssetUrl('/assets/images/port4_32.jpg') },
+    { id: 5, title: 'The Last Supper', category: 'Paintings', src: getAssetUrl('/assets/images/port5_32.jpg') },
+    { id: 6, title: 'Angel Statue', category: 'Sculptures', src: getAssetUrl('/assets/images/port6_32.jpg') },
+    { id: 7, title: 'Eternal Moment', category: 'Paintings', src: getAssetUrl('/assets/images/port7_32.jpg') },
+    { id: 8, title: 'Bronze Legacy', category: 'Sculptures', src: getAssetUrl('/assets/images/port8_32.jpg') },
+    { id: 9, title: 'Church Interior', category: 'Paintings', src: getAssetUrl('/assets/images/porta1_32.jpg') },
 ];
 
 const Gallery = () => {
@@ -70,9 +72,9 @@ const Gallery = () => {
                 </motion.div>
 
                 <div className="mt-16 text-center">
-                    <button className="px-8 py-3 border border-memorial-gold text-memorial-gold hover:bg-memorial-gold hover:text-memorial-dark transition-all duration-300 font-serif tracking-widest uppercase text-sm">
+                    <Link to="/portfolio" className="inline-block px-8 py-3 border border-memorial-gold text-memorial-gold hover:bg-memorial-gold hover:text-memorial-dark transition-all duration-300 font-serif tracking-widest uppercase text-sm">
                         View Full Collection
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>
