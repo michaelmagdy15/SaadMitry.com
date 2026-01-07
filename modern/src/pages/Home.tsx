@@ -6,6 +6,9 @@ import QuoteCarousel from '../components/QuoteCarousel';
 import PhotoMemories from '../components/PhotoMemories';
 import CandleLighting from '../components/CandleLighting';
 import Guestbook from '../components/Guestbook';
+import MemorialStats from '../components/MemorialStats';
+import PersonalStories from '../components/PersonalStories';
+import FavoriteThings from '../components/FavoriteThings';
 import { Link } from 'react-router-dom';
 import { getAssetUrl } from '../utils/assetUtils';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -22,14 +25,29 @@ const Home: React.FC = () => {
                 <QuoteCarousel />
             </ScrollReveal>
 
+            {/* Memorial Statistics - Legacy Numbers */}
+            <ScrollReveal animation="fade-up" width="100%">
+                <MemorialStats />
+            </ScrollReveal>
+
             {/* Photo Memories with Ken Burns Effect */}
             <ScrollReveal animation="fade-in" width="100%">
                 <PhotoMemories />
             </ScrollReveal>
 
+            {/* Personal Stories & Anecdotes */}
+            <ScrollReveal animation="fade-up" width="100%">
+                <PersonalStories />
+            </ScrollReveal>
+
             {/* Original Gallery Preview */}
             <ScrollReveal animation="fade-in" width="100%">
                 <Gallery />
+            </ScrollReveal>
+
+            {/* Favorite Things Section */}
+            <ScrollReveal animation="fade-up" width="100%">
+                <FavoriteThings />
             </ScrollReveal>
 
             {/* Candle Lighting Ceremony */}
